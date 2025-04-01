@@ -39,18 +39,19 @@ scratch-giant comes with sensible defaults but can be configured to your liking.
 Configuration options with their default values:
 >
     require('scratch-giant').setup({
-      file_path = vim.fn.stdpath('data') .. '/scratch-giant.txt',
+      file_path = vim.fn.stdpath('data') .. '/scratch-giant.md',
       open_cmd = 'edit',
       mappings = {
         open = '<leader>s',
       },
-      auto_save = true
+      auto_save = true,
+      file_type = 'markdown'
     })
 <
 
 `file_path`
     Path where the scratchpad content will be saved.
-    Default: `~/.local/share/nvim/scratch-giant.txt`
+    Default: `~/.local/share/nvim/scratch-giant.md`
 
 `open_cmd`
     Command used to open the scratchpad buffer.
@@ -63,6 +64,10 @@ Configuration options with their default values:
 `auto_save`
     Whether to automatically save changes to the scratchpad.
     Default: `true`
+    
+`file_type`
+    Filetype to use for the scratchpad buffer.
+    Default: `markdown`
 
 ==============================================================================
 4. USAGE                                                  *scratch-giant-usage*

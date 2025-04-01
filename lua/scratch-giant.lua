@@ -1,12 +1,13 @@
 local M = {}
 
 M.config = {
-	file_path = vim.fn.stdpath("data") .. "/scratch-giant.txt",
+	file_path = vim.fn.stdpath("data") .. "/scratch-giant.md",
 	open_cmd = "edit",
 	mappings = {
 		open = "<leader>s",
 	},
 	auto_save = true,
+	file_type = "markdown",
 }
 
 function M.setup(user_config)
@@ -48,7 +49,7 @@ function M.open_scratchpad()
 
 	vim.opt_local.buflisted = false
 	vim.opt_local.buftype = ""
-	vim.opt_local.filetype = "scratch-giant"
+	vim.opt_local.filetype = M.config.file_type
 end
 
 return M

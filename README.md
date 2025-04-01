@@ -26,12 +26,13 @@ A simple plugin for Neovim that provides a persistent scratchpad functionality. 
 
 ```lua
 require('scratch-giant').setup({
-  file_path = vim.fn.stdpath('data') .. '/scratch-giant.txt', -- Default location
+  file_path = vim.fn.stdpath('data') .. '/scratch-giant.md', -- Default location
   open_cmd = 'edit', -- Command used to open the scratchpad
   mappings = {
     open = '<leader>s', -- Keymap to open the scratchpad
   },
-  auto_save = true -- Automatically save changes
+  auto_save = true, -- Automatically save changes
+  file_type = 'markdown' -- Filetype for the scratchpad (markdown or text)
 })
 ```
 
