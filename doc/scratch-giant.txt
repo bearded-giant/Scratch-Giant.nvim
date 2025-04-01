@@ -1,0 +1,92 @@
+*scratch-giant.txt*  A persistent scratchpad for Neovim
+
+==============================================================================
+CONTENTS                                                *scratch-giant-contents*
+
+    1. Introduction ........................... |scratch-giant-introduction|
+    2. Installation ........................... |scratch-giant-installation|
+    3. Configuration .......................... |scratch-giant-configuration|
+    4. Usage .................................. |scratch-giant-usage|
+    5. Commands ............................... |scratch-giant-commands|
+    6. Mappings ............................... |scratch-giant-mappings|
+    7. License ................................ |scratch-giant-license|
+
+==============================================================================
+1. INTRODUCTION                                      *scratch-giant-introduction*
+
+scratch-giant is a simple Neovim plugin that provides a persistent scratchpad
+functionality. The scratchpad persists to a file so you can close and reopen
+it between sessions.
+
+==============================================================================
+2. INSTALLATION                                      *scratch-giant-installation*
+
+Using lazy.nvim:
+>
+    {
+      'bearded-giant/scratch-giant.nvim',
+      config = function()
+        require('scratch-giant').setup()
+      end
+    }
+<
+
+==============================================================================
+3. CONFIGURATION                                    *scratch-giant-configuration*
+
+scratch-giant comes with sensible defaults but can be configured to your liking.
+
+Configuration options with their default values:
+>
+    require('scratch-giant').setup({
+      file_path = vim.fn.stdpath('data') .. '/scratch-giant.txt',
+      open_cmd = 'edit',
+      mappings = {
+        open = '<leader>s',
+      },
+      auto_save = true
+    })
+<
+
+`file_path`
+    Path where the scratchpad content will be saved.
+    Default: `~/.local/share/nvim/scratch-giant.txt`
+
+`open_cmd`
+    Command used to open the scratchpad buffer.
+    Default: `edit`
+
+`mappings.open`
+    Key mapping to open the scratchpad.
+    Default: `<leader>s`
+
+`auto_save`
+    Whether to automatically save changes to the scratchpad.
+    Default: `true`
+
+==============================================================================
+4. USAGE                                                  *scratch-giant-usage*
+
+1. Use the `:ScratchGiant` command to open the scratchpad.
+2. Press the configured mapping (default: `<leader>s`) to quickly open it.
+3. The content will automatically save and persist between sessions.
+
+==============================================================================
+5. COMMANDS                                            *scratch-giant-commands*
+
+:ScratchGiant                                                  *:ScratchGiant*
+    Opens the scratch pad buffer.
+
+==============================================================================
+6. MAPPINGS                                            *scratch-giant-mappings*
+
+<leader>s                                               *scratch-giant-open*
+    Opens the scratch pad buffer.
+    Can be configured with the `mappings.open` option.
+
+==============================================================================
+7. LICENSE                                              *scratch-giant-license*
+
+MIT License
+
+ vim:tw=78:ts=8:ft=help:norl:
