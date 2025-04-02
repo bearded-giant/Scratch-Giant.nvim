@@ -4,8 +4,8 @@ M.config = {
 	file_path = vim.fn.stdpath("data") .. "/scratch-giant.md",
 	open_cmd = "edit",
 	mappings = {
-		open = "<leader>s",
-		toggle = "<leader>S",
+		open = "<leader>bg",
+		toggle = "<leader>bG",
 	},
 	auto_save = true,
 	file_type = "markdown",

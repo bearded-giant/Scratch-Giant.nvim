@@ -42,8 +42,8 @@ Configuration options with their default values:
       file_path = vim.fn.stdpath('data') .. '/scratch-giant.md',
       open_cmd = 'edit',
       mappings = {
-        open = '<leader>s',
-        toggle = '<leader>S',
+        open = '<leader>bg',
+        toggle = '<leader>bG',
       },
       auto_save = true,
       file_type = 'markdown'
@@ -78,8 +78,8 @@ Configuration options with their default values:
 4. USAGE                                                  *scratch-giant-usage*
 
 1. Use the `:ScratchGiant` command to open the scratchpad.
-2. Press the configured mapping (default: `<leader>s`) to quickly open it.
-3. Use `:ScratchGiantToggle` or the toggle mapping (default: `<leader>S`) to 
+2. Press the configured mapping (default: `<leader>bg`) to quickly open it.
+3. Use `:ScratchGiantToggle` or the toggle mapping (default: `<leader>bG`) to 
    toggle the scratchpad (open if closed, close if open).
 4. The content will automatically save and persist between sessions.
 
@@ -95,11 +95,11 @@ Configuration options with their default values:
 ==============================================================================
 6. MAPPINGS                                            *scratch-giant-mappings*
 
-<leader>s                                               *scratch-giant-open*
+<leader>bg                                              *scratch-giant-open*
     Opens the scratch pad buffer.
     Can be configured with the `mappings.open` option.
 
-<leader>S                                               *scratch-giant-toggle*
+<leader>bG                                              *scratch-giant-toggle*
     Toggles the scratch pad buffer (opens if closed, closes if open).
     Can be configured with the `mappings.toggle` option.
 
