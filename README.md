@@ -5,6 +5,7 @@ A simple plugin for Neovim that provides a persistent scratchpad functionality. 
 ## Features
 
 - Open a dedicated scratchpad buffer with a single command
+- Toggle the scratchpad buffer (open if closed, close if open)
 - Persist scratchpad content to a file automatically
 - Configurable file path and keybindings
 - Auto-save on text changes
@@ -30,6 +31,7 @@ require('scratch-giant').setup({
   open_cmd = 'edit', -- Command used to open the scratchpad
   mappings = {
     open = '<leader>s', -- Keymap to open the scratchpad
+    toggle = '<leader>S', -- Keymap to toggle the scratchpad
   },
   auto_save = true, -- Automatically save changes
   file_type = 'markdown' -- Filetype for the scratchpad (markdown or text)
@@ -40,6 +42,7 @@ require('scratch-giant').setup({
 
 - Use the `:ScratchGiant` command to open the scratchpad
 - Press `<leader>s` (default keymap) to quickly open the scratchpad
+- Use `:ScratchGiantToggle` or press `<leader>S` (default) to toggle the scratchpad (open if closed, close if open)
 - The content will be automatically saved and persist between sessions
 
 ## License

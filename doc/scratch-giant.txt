@@ -43,6 +43,7 @@ Configuration options with their default values:
       open_cmd = 'edit',
       mappings = {
         open = '<leader>s',
+        toggle = '<leader>S',
       },
       auto_save = true,
       file_type = 'markdown'
@@ -61,6 +62,10 @@ Configuration options with their default values:
     Key mapping to open the scratchpad.
     Default: `<leader>s`
 
+`mappings.toggle`
+    Key mapping to toggle the scratchpad (open if closed, close if open).
+    Default: `<leader>S`
+
 `auto_save`
     Whether to automatically save changes to the scratchpad.
     Default: `true`
@@ -74,7 +79,9 @@ Configuration options with their default values:
 
 1. Use the `:ScratchGiant` command to open the scratchpad.
 2. Press the configured mapping (default: `<leader>s`) to quickly open it.
-3. The content will automatically save and persist between sessions.
+3. Use `:ScratchGiantToggle` or the toggle mapping (default: `<leader>S`) to 
+   toggle the scratchpad (open if closed, close if open).
+4. The content will automatically save and persist between sessions.
 
 ==============================================================================
 5. COMMANDS                                            *scratch-giant-commands*
@@ -82,12 +89,19 @@ Configuration options with their default values:
 :ScratchGiant                                                  *:ScratchGiant*
     Opens the scratch pad buffer.
 
+:ScratchGiantToggle                                    *:ScratchGiantToggle*
+    Toggles the scratch pad buffer (opens if closed, closes if open).
+
 ==============================================================================
 6. MAPPINGS                                            *scratch-giant-mappings*
 
 <leader>s                                               *scratch-giant-open*
     Opens the scratch pad buffer.
     Can be configured with the `mappings.open` option.
+
+<leader>S                                               *scratch-giant-toggle*
+    Toggles the scratch pad buffer (opens if closed, closes if open).
+    Can be configured with the `mappings.toggle` option.
 
 ==============================================================================
 7. LICENSE                                              *scratch-giant-license*
